@@ -57,15 +57,7 @@ for i in range(len(units)):
     try:
         driver.get(get_url)
         time.sleep(random.random() * 3)
-
-        # 切换到公网
-        try:
-            driver.find_element_by_xpath('//*[@id="coursetree"]/div[' + str(i + 1) + ']').click()
-        except:
-            driver.find_element_by_xpath('//*[@id="coursetree"]/div[' + str(i + 1) + ']/div').click()
-
-        time.sleep(random.random() * 3)
-
+        
         # 切换到iframe的html里面
         driver.switch_to.frame('iframe')
         time.sleep(random.random() * 4)
@@ -77,6 +69,14 @@ for i in range(len(units)):
             driver.switch_to.frame(driver.find_element_by_xpath('//body/div/div/p/span/div/iframe'))
 
         time.sleep(random.random() * 5)
+
+        # 切换到公网
+        try:
+            driver.find_element_by_xpath('//*[@id="coursetree"]/div[' + str(i + 1) + ']').click()
+        except:
+            driver.find_element_by_xpath('//*[@id="coursetree"]/div[' + str(i + 1) + ']/div').click()
+
+        time.sleep(random.random() * 3)
 
         # 找到播放按钮并点击
         try:
