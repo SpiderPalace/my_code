@@ -43,7 +43,7 @@ yang_zheng.send_keys(yan_zheng_ma)
 login = driver.find_element_by_xpath('//*[@id="form"]/table/tbody/tr[7]/td[2]/label/input').click()
 
 # 得到慕课网址
-get_url = input('请输入慕课链接:')
+get_url = '请输入慕课链接:'
 driver.get(get_url)
 time.sleep(5)
 
