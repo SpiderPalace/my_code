@@ -43,7 +43,7 @@ yang_zheng.send_keys(yan_zheng_ma)
 login = driver.find_element_by_xpath('//*[@id="form"]/table/tbody/tr[7]/td[2]/label/input').click()
 
 # 得到慕课网址
-get_url = '请输入慕课链接:'
+get_url = 'https://mooc1-2.chaoxing.com/mycourse/studentstudy?chapterId=127067864&courseId=203379033&clazzid=6687211&enc=94d124749462f69967972f331c3c0040'
 driver.get(get_url)
 time.sleep(5)
 
