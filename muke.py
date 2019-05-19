@@ -43,8 +43,9 @@ yang_zheng.send_keys(yan_zheng_ma)
 login = driver.find_element_by_xpath('//*[@id="form"]/table/tbody/tr[7]/td[2]/label/input').click()
 
 # 得到慕课网址
-get_url = input('请输入慕课链接')
+get_url = input('请输入慕课链接:')
 driver.get(get_url)
+time.sleep(5)
 
 # 遍历所有的章节
 k = 0
@@ -53,18 +54,16 @@ k = 0
 units = driver.find_elements_by_xpath('//*[@id="coursetree"]/div')
 all1 = len(units)
 
-for i in range(62, len(units)):
+for i in range(len(units)):
     try:
-
         driver.get(get_url)
-
         time.sleep(random.random() * 3)
 
         # 切换到公网
         try:
-            driver.find_element_by_xpath('//*[@id="coursetree"]/div[' + str(i + 1) + ']/div').click()
-        except:
             driver.find_element_by_xpath('//*[@id="coursetree"]/div[' + str(i + 1) + ']').click()
+        except:
+            driver.find_element_by_xpath('//*[@id="coursetree"]/div[' + str(i + 1) + ']/div').click()
 
         time.sleep(random.random() * 3)
 
@@ -94,6 +93,12 @@ for i in range(62, len(units)):
         time_all = driver.find_element_by_xpath('//*[@id="video"]/div[4]/div[4]/span[2]').text
         print('正在播放第{}个， 时长是{}，一共有{}个， 完成度是{}'.format(k + 1, time_all, all1, k / all1))
         time.sleep(random.random() * 10)
+
+        try:
+            driver.find_element_by_xpath('//*[@id="video"]/div[4]/div[8]/span').click()
+            driver.find_element_by_xpath('//*[@id="video"]/div[4]/div[8]/div/ul/li[3]/span[1]').click()
+        except:
+            pass
 
         # 找到快进按钮
         try:
