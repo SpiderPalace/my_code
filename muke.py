@@ -188,4 +188,5 @@ for i in range(len(units)):
         k += 1
     except Exception as e:
         print("error" + str(i + 1))
+        k += 1
         continue
