@@ -1,7 +1,6 @@
 from selenium import webdriver
 import time
 import random
-from selenium.webdriver.common.action_chains import ActionChains
 
 driver = webdriver.Chrome()
 # driver = webdriver.safari()
